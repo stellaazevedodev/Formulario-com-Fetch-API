@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/projeto.css" media="screen" />
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/form.js"></script>
+    
+    <title>Cadastre-se</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastre-se </h1>
+        <span class="regua"></span>
+    </header>
+    <div class="container">
+        <div>
+            <h1>Informações Pessoais</h1>
+        </div>
+        <form id="frm">
+            <div class="row mt-5">
+                <div class="col-8">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control required" id="nome" name="nome" placeholder="Digite seu Nome" oninput="validateName() ">
+                    <span class="span-required" style="display: none; color:rgb(202, 11, 11);"  >O nome deve ter no minímo 3 caracteres</span> 
+                </div>
+                <div class="col-4">
+                    <label for="datanasce" class="form-label">Data de nascimento</label>
+                    <input type="date" class="form-control" id="datanasce" name="datanasce">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mt-2">
+                    <label for="email" class="form-label la">Email</label>
+                    <input type="email" required class="form-control required" id="email" name="email" placeholder="Digite seu Email" oninput="EmailValidate()">
+                    <span class="span-required" style="display: none; color:rgb(202, 11, 11);">Digite um email válido</span> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 mt-2">
+                    <label for="fone" class="form-label la">Telefone</label>   
+                    <input type="tel" class="form-control required" id="foneid" name="fone" maxlength="14" onkeypress="formatar('(##)#####-####', this)" placeholder="Número de telefone" oninput="validateTel()">
+                    <span class="span-required" style="display: none; color:rgb(202, 11, 11);">O telefone deve ter 11 digitos</span> 
+                </div>
+                <div class="col-3 mt-2">
+                    <label for="cpf" class="form-label la">CPF</label>
+                    <input type="text" class="form-control required" id="cpf" name="cpf" maxlength="14" onkeypress="formatar('###.###.###-##', this)" placeholder="Digite seu CPF" oninput="validateCPF()">
+                    <span class="span-required" style="display: none; color:rgb(202, 11, 11);">O CPF deve ter 11 digitos</span> 
+                </div>                
+                <div class="col-3 mt-2">
+                    <label for="rg" class="form-label la">RG</label>   
+                    <input type="text" class="form-control required" id="rg" name="rg" maxlength="12" onkeypress="formatar('##.###.###-#', this)" placeholder="Digite seu RG" oninput="validateRg()">
+                    <span class="span-required" style="display: none; color:rgb(202, 11, 11);">O RG deve ter 9 digitos</span> 
+                </div>
+            </div>
+
+            <div>
+                <h1>Endereço</h1>
+            </div>
+    
+                <div class="row g-3 align-items-center mt-5">
+                    <div class="col-auto">
+                        <label for="cep" class="col-form-label font">CEP</label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" id="cep" class="form-control alt required" aria-describedby="passwordHelpInline" placeholder="Inira seu CEP" name="cep" maxlength="9" onkeypress="formatar('#####-###', this)" placeholder="Digite seu CEP" oninput="validateCep()">
+                        <span class="span-required" style="display: none; color:rgb(202, 11, 11);">O CEP deve ter 8 digitos</span> 
+                    </div>
+                    <div class="col-auto">
+                         <button class="btn btn-primary" type="button">Enviar</button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-8">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" name="endereco">
+                    </div>
+                    <div class="col-4">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="complemento" name="complemento">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <label for="bairro" class="form-label">Bairro</label>
+                        <input type="text" class="form-control" id="bairro" name="bairro">
+                    </div>
+                    <div class="col-6">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" class="form-control" id="cidade" name="cidade">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-4">
+                        <label for="nr" class="form-label">Número*</label>
+                        <input type="text" class="form-control required" id="nr" placeholder="Insira o número da sua residência" name="numero" oninput="validateNr()">
+                        <span class="span-required" style="display: none; color:rgb(202, 11, 11);">Coloque o número da sua residencia</span>
+                    </div>
+                    <div class="col-8 mt-2">
+                        <label for="uf">Estado</label>
+                        <select class="form-select" id="uf" aria-label="Default select example" name="uf">
+                            <option selected>Escolha seu estado</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <h1>Mensagem</h1>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12 mt-2">
+                        <label for="assun" class="form-label la">Assunto</label>
+                        <input type="text" class="form-control required" id="assun" name="assun" placeholder="Insira o Assunto a ser tratado" oninput="validateAss()">
+                        <span class="span-required" style="display: none; color:rgb(202, 11, 11);">Insira um assunto</span>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-12 la mt-2">
+                        <label for="Mensagem" class="form-label">Mensagem</label>
+                        <textarea type="text" class="form-control required" id="Mensagem" name="Mensagem" oninput="validateMsg()"></textarea>
+                        <span class="span-required" style="display: none; color:rgb(202, 11, 11);">Insira sua mensagem</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 mt-2">
+                        <label for="senha" class="form-label la">Senha</label>
+                        <input type="text" class="form-control required" id="senha" name="senha" placeholder="Insira uma senha" oninput="validateSenha()">
+                        <span class="span-required" style="display: none; color:rgb(202, 11, 11);">A senha deve ter no minimo 3 dígitos</span>
+                    </div>
+                </div>
+                <div class="row mt-5 mb-3">
+                    <div class="col-12" id="json">
+                        <button type="button" class="btn btn-success"  onclick="validarFormulario(event)">Finalizar</button>
+                        <button type="reset" class="btn btn-danger ms-2">Limpar</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</body>
+<script src="js/cadastra.js"></script>
+<script src="js/vali.js"></script>
+</html>

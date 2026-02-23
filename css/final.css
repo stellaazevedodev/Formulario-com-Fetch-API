@@ -1,0 +1,31 @@
+
+body{
+	background-color:beige;
+	overflow-x: hidden;
+}
+header{
+    text-align: center;
+    padding-bottom: 3vw;
+}
+.mg{
+    margin-top: 15vw;
+}
+.container{
+	padding:0;
+}
+.icon{
+    width: 120px;
+    height: 120px;
+}
+.regua {
+    display: block;
+    padding: 0;
+    margin: 10px auto; /* Alinha a linha no centro */
+    width: 70%; /* Largura da linha */
+    height: 1px; /* Altura da linha */
+    background-color: #003566; /* Cor da linha */
+ 
+}
+h1{
+    margin-top:3vw ;
+}
